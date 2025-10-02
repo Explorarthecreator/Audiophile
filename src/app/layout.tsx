@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ConvexClientProvider } from "./ConvexProvider";
+import { manrope } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Audiophile",
@@ -14,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased bg-white`}>
+      <body className={`${manrope.className} antialiased `}>
         <ConvexClientProvider> {children}</ConvexClientProvider>
       </body>
     </html>
