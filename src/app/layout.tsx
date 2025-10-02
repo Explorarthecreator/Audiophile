@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.className} antialiased h-screen overflow-y-auto`}
+        className={`${manrope.className} antialiased h-screen overflow-y-auto overflow-x-clip`}
       >
         <ConvexClientProvider>
           <Header />

@@ -3,7 +3,7 @@ import NewProduct from "./shared/new-product";
 
 const Header = () => {
   return (
-    <div>
+    <div className="bg-[#0E0E0E] text-white ">
       <NewProduct />
     </div>
   );
