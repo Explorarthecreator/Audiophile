@@ -1,4 +1,6 @@
+import { ArrowRight2 } from "iconsax-reactjs";
 import Image from "next/image";
+import Link from "next/link";
 
 const Categories = () => {
   return (
@@ -22,7 +24,13 @@ const Categories = () => {
         </div>
         <div className="space-y-4">
           <h1 className="text-center text-[15px] font-bold">Headphones</h1>
-          <p className="text-center font-bold opacity-50 text-[13px]">shop</p>
+          <Link
+            href={"/headphones"}
+            className="font-bold text-[13px] flex items-center gap-1 justify-center hover:text-[#D87D4A]  opacity-50 hover:opacity-100"
+          >
+            <span>shop</span>
+            <ArrowRight2 size={12} color="#D87D4A" className="" />
+          </Link>
         </div>
       </div>
 
@@ -45,7 +53,13 @@ const Categories = () => {
         </div>
         <div className="space-y-4">
           <h1 className="text-center text-[15px] font-bold">Speakers</h1>
-          <p className="text-center font-bold opacity-50 text-[13px]">shop</p>
+          <Link
+            href={"/speakers"}
+            className="font-bold text-[13px] flex items-center gap-1 justify-center hover:text-[#D87D4A]  opacity-50 hover:opacity-100"
+          >
+            <span>shop</span>
+            <ArrowRight2 size={12} color="#D87D4A" className="" />
+          </Link>
         </div>
       </div>
 
@@ -68,7 +82,13 @@ const Categories = () => {
         </div>
         <div className="space-y-4">
           <h1 className="text-center text-[15px] font-bold">Earphones</h1>
-          <p className="text-center font-bold opacity-50 text-[13px]">shop</p>
+          <Link
+            href={"/earphones"}
+            className="font-bold text-[13px] flex items-center gap-1 justify-center hover:text-[#D87D4A] opacity-50 hover:opacity-100"
+          >
+            <span>shop</span>
+            <ArrowRight2 size={14} color="#D87D4A" />
+          </Link>
         </div>
       </div>
     </div>
