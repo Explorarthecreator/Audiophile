@@ -13,7 +13,7 @@ const MinorHeader = ({ route }: { route: string }) => {
     }
   }, [route]);
   return (
-    <div className="py-8 md:py-24 md:text-[40px] bg-red-400 text-center uppercase font-bold text-[28px]">
+    <div className="py-8 md:py-24 md:text-[40px] text-center uppercase font-bold text-[28px]">
       {refine}
     </div>
   );
