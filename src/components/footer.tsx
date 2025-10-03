@@ -16,16 +16,16 @@ const Footer = () => {
             className="w-[143px] h-[25px]"
           />
           <div className="uppercase text-white text-center flex flex-col md:flex-row gap-4 md:gap-8.5 text-[13px] font-bold">
-            <Link href={"#"} className="hover:text-[#D87D4A]">
+            <Link href={"/"} className="hover:text-[#D87D4A]">
               Home
             </Link>
-            <Link href={"#"} className="hover:text-[#D87D4A]">
+            <Link href={"/headphones"} className="hover:text-[#D87D4A]">
               Headphones
             </Link>
-            <Link href={"#"} className="hover:text-[#D87D4A]">
+            <Link href={"/speakers"} className="hover:text-[#D87D4A]">
               Speakers
             </Link>
-            <Link href={"#"} className="hover:text-[#D87D4A]">
+            <Link href={"/earphones"} className="hover:text-[#D87D4A]">
               Earphones
             </Link>
           </div>
