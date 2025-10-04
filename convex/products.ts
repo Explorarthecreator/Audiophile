@@ -23,3 +23,18 @@ export const getProducts = query({
     );
   },
 });
+
+export const getProduct = query({
+  args: { productId: v.id("products") },
+  handler: async (ctx, args): Promise<ProductResponse> => {
+    const product = await ctx.db.get(args.productId);
+
+    return {
+      ...product,
+      mainImage: await ctx.storage.getUrl(product.mainImage),
+      featureImage: await Promise.all(
+        product.featureImage.map((image: string) => ctx.storage.getUrl(image))
+      ),
+    };
+  },
+});

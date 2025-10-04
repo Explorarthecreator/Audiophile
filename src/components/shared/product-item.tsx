@@ -1,7 +1,8 @@
 import React from "react";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import Image from "next/image";
 import { ProductResponse } from "@/types";
+import Link from "next/link";
 
 const ProductItem = ({
   product,
@@ -45,7 +46,9 @@ const ProductItem = ({
         <p className="text-[15px] font-medium opacity-75   leading-7">
           {product.description}
         </p>
-        <Button>SEE PRODUCT</Button>
+        <Link href={`/${product._id}`} className={`${buttonVariants()}`}>
+          SEE PRODUCT
+        </Link>
       </div>
     </div>
   );
