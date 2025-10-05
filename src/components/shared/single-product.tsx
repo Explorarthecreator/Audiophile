@@ -8,8 +8,10 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { useCart } from "@/context/cart-context";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Product = ({ id }: { id: string }) => {
+  const router = useRouter();
   const { addToCart } = useCart();
   const [quantity, setQuantity] = useState<number>(1);
   const product = useQuery(api.products.getProduct, {
@@ -21,7 +23,13 @@ const Product = ({ id }: { id: string }) => {
   }
   return (
     <div className="px-6 md:px-10 max-w-[1100px] m-auto py-10 space-y-6 lg:space-y-14">
-      <p className="capitalize opacity-50 text-[15px]">go back</p>
+      <Button
+        variant={"ghost"}
+        onClick={() => router.back()}
+        className="capitalize opacity-50 text-[15px] px-0 hover:bg-transparent"
+      >
+        go back
+      </Button>
       <div className="space-y-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-24 items-center ">
           <div className={`bg-[#F1F1F1] flex flex-col  items-center py-10`}>
