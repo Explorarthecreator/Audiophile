@@ -48,6 +48,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         return prevItems;
       } else {
         // Add new item
+        toast("item added to cart");
         return [...prevItems, item];
       }
     });
