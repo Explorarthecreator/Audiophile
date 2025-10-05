@@ -6,8 +6,12 @@ import { Id } from "../../../convex/_generated/dataModel";
 import Loading from "../loading";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import { useCart } from "@/context/cart-context";
+import { useState } from "react";
 
 const Product = ({ id }: { id: string }) => {
+  const { addToCart } = useCart();
+  const [quantity, setQuantity] = useState<number>(1);
   const product = useQuery(api.products.getProduct, {
     productId: id as Id<"products">,
   });
@@ -16,8 +20,8 @@ const Product = ({ id }: { id: string }) => {
     return <Loading />;
   }
   return (
-    <div className="px-6 md:px-10 max-w-[1100px] m-auto py-10 space-y-14">
-      <p className="uppercase">go back</p>
+    <div className="px-6 md:px-10 max-w-[1100px] m-auto py-10 space-y-6 lg:space-y-14">
+      <p className="capitalize opacity-50 text-[15px]">go back</p>
       <div className="space-y-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-24 items-center ">
           <div className={`bg-[#F1F1F1] flex flex-col  items-center py-10`}>
@@ -46,8 +50,38 @@ const Product = ({ id }: { id: string }) => {
             <p className="text-lg font-bold">
               $ {product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             </p>
-            <div>
-              <Button>ADD TO CART</Button>
+            <div className="flex w-full lg:w-4/5 gap-4 flex-wrap ">
+              <div className="bg-[#F1F1F1] h-12 gap-5 flex items-center">
+                <Button
+                  variant={"ghost"}
+                  disabled={quantity <= 1}
+                  onClick={() => setQuantity(quantity - 1)}
+                  className="opacity-25 px-4 text-[13px] font-bold"
+                >
+                  -
+                </Button>
+                <p className="text-[13px] font-bold">{quantity}</p>
+                <Button
+                  variant={"ghost"}
+                  onClick={() => setQuantity(quantity + 1)}
+                  className="opacity-25 px-4 text-[13px] font-bold"
+                >
+                  +
+                </Button>
+              </div>
+              <Button
+                onClick={() => {
+                  addToCart({
+                    id: product._id,
+                    amount: product.price,
+                    image: product.mainImage,
+                    name: product.name,
+                    quantity: quantity,
+                  });
+                }}
+              >
+                ADD TO CART
+              </Button>
             </div>
           </div>
         </div>

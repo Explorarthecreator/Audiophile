@@ -1,6 +1,7 @@
 "use client";
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { toast } from "sonner";
 
 export interface CartItem {
   id: string;
@@ -43,11 +44,8 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
       if (existingItem) {
         // Update quantity if item already exists
-        return prevItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
-            : cartItem
-        );
+        toast("Item already added to cart");
+        return prevItems;
       } else {
         // Add new item
         return [...prevItems, item];
@@ -87,4 +85,12 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
       {children}
     </CartContext.Provider>
   );
+};
+
+export const useCart = () => {
+  const context = useContext(CartContext);
+  if (context === undefined) {
+    throw new Error("useCart must be used within a CartProvider");
+  }
+  return context;
 };

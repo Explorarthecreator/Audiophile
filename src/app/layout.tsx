@@ -5,6 +5,7 @@ import { manrope } from "./fonts";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { CartProvider } from "@/context/cart-context";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Audiophile",
@@ -28,6 +29,7 @@ export default function RootLayout({
             <Footer />
           </CartProvider>
         </ConvexClientProvider>
+        <Toaster />
       </body>
     </html>
   );
