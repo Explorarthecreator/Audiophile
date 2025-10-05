@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, buttonVariants } from "../ui/button";
+import { buttonVariants } from "../ui/button";
 import Image from "next/image";
 import { ProductResponse } from "@/types";
 import Link from "next/link";

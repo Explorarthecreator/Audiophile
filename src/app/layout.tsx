@@ -4,6 +4,7 @@ import { ConvexClientProvider } from "./ConvexProvider";
 import { manrope } from "./fonts";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { CartProvider } from "@/context/cart-context";
 
 export const metadata: Metadata = {
   title: "Audiophile",
@@ -21,9 +22,11 @@ export default function RootLayout({
         className={`${manrope.className} antialiased h-screen overflow-y-auto overflow-x-clip`}
       >
         <ConvexClientProvider>
-          <Header />
-          {children}
-          <Footer />
+          <CartProvider>
+            <Header />
+            {children}
+            <Footer />
+          </CartProvider>
         </ConvexClientProvider>
       </body>
     </html>
