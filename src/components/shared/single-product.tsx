@@ -50,7 +50,7 @@ const Product = ({ id }: { id: string }) => {
             <p className="text-lg font-bold">
               $ {product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
             </p>
-            <div className="flex w-full lg:w-4/5 gap-4 flex-wrap ">
+            <div className="flex w-full lg:w-4/5 gap-4 flex-wrap lg:flex-nowrap ">
               <div className="bg-[#F1F1F1] h-12 gap-5 flex items-center">
                 <Button
                   variant={"ghost"}
