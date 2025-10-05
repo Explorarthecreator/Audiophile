@@ -9,6 +9,7 @@ import { Button } from "../ui/button";
 import { useCart } from "@/context/cart-context";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import SimilarProducts from "./similar-products";
 
 const Product = ({ id }: { id: string }) => {
   const router = useRouter();
@@ -22,7 +23,7 @@ const Product = ({ id }: { id: string }) => {
     return <Loading />;
   }
   return (
-    <div className="px-6 md:px-10 max-w-[1100px] m-auto py-10 space-y-6 lg:space-y-14">
+    <div className=" max-w-[1100px] m-auto py-10 space-y-6 lg:space-y-14">
       <Button
         variant={"ghost"}
         onClick={() => router.back()}
@@ -144,6 +145,8 @@ const Product = ({ id }: { id: string }) => {
           </div>
         </div>
       </div>
+
+      <SimilarProducts id={id} category={product.category} />
     </div>
   );
 };
