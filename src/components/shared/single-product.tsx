@@ -11,7 +11,6 @@ const Product = ({ id }: { id: string }) => {
   const product = useQuery(api.products.getProduct, {
     productId: id as Id<"products">,
   });
-  console.log(product);
 
   if (product === undefined) {
     return <Loading />;
