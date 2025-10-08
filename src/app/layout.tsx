@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${manrope.className} antialiased h-screen overflow-y-auto overflow-x-clip`}
+        className={`${manrope.className} bg-[#FAFAFA] antialiased h-screen overflow-y-auto overflow-x-clip`}
       >
         <ConvexClientProvider>
           <CartProvider>
