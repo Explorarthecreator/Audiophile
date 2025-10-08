@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
+import Link from "next/link";
 
 const NewProduct = () => {
   return (
@@ -15,7 +16,12 @@ const NewProduct = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <Button>SEE PRODUCT</Button>
+        <Link
+          className={buttonVariants()}
+          href={"/jd7d5zny3ktar6t2th5zdh6v9n7rtsad"}
+        >
+          SEE PRODUCT
+        </Link>
       </div>
       <div className="hidden lg:block">
         <Image src={"/assets/Bitmap.png"} alt="" width={1000} height={1000} />
