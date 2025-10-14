@@ -8,13 +8,15 @@ const Footer = () => {
     <footer className="bg-black py-9 px-6 xl:px-0 mt-24">
       <div className="max-w-[1100px] m-auto space-y-12">
         <div className="flex flex-col lg:flex-row  items-center md:items-start gap-12 md:gap-8 lg:gap-0 lg:justify-between">
-          <Image
-            src={"/assets/logo.svg"}
-            alt="audiphile-logo"
-            width={500}
-            height={500}
-            className="w-[143px] h-[25px]"
-          />
+          <Link href={"/"}>
+            <Image
+              src={"/assets/logo.svg"}
+              alt="audiphile-logo"
+              width={500}
+              height={500}
+              className="w-[143px] h-[25px]"
+            />
+          </Link>
           <div className="uppercase text-white text-center flex flex-col md:flex-row gap-4 md:gap-8.5 text-[13px] font-bold">
             <Link href={"/"} className="hover:text-[#D87D4A]">
               Home
