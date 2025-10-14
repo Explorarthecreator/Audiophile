@@ -2,11 +2,12 @@ import Link from "next/link";
 import Cart from "./shared/cart";
 import Image from "next/image";
 import { HamburgerMenu } from "iconsax-reactjs";
+import MobileMenu from "./mobile.menu";
 
 const NavBar = () => {
   return (
-    <div className="px-6 md:px-10 xl:px-0 max-w-[1100px] m-auto py-8 flex justify-between items-center lg:border-b lg:border-b-white/20">
-      <HamburgerMenu className="lg:hidden" />
+    <div className="px-6 relative md:px-10 xl:px-0 max-w-[1100px] m-auto py-8 flex justify-between items-center lg:border-b lg:border-b-white/20">
+      <MobileMenu />
       <Link href={"/"}>
         <Image
           src={"/assets/logo.svg"}
