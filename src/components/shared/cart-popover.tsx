@@ -16,7 +16,7 @@ const CartPopover = ({
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger>
-        <div className="relative w-5 h-5">
+        <div className="relative w-5 h-5 cursor-pointer">
           <Image
             src={"/assets/cart.svg"}
             alt="cart-icon"
