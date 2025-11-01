@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Cart from "./shared/cart";
 import Image from "next/image";
-import { HamburgerMenu } from "iconsax-reactjs";
-import MobileMenu from "./mobile.menu";
+import MobileMenu from "./mobile-menu";
 
 const NavBar = () => {
   return (
