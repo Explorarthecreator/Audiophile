@@ -1,8 +1,9 @@
 "use client";
 
-import { ArrowRight2, HamburgerMenu } from "iconsax-reactjs";
+import { ArrowRight2, CloseCircle, HamburgerMenu } from "iconsax-reactjs";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetHeader,
@@ -12,25 +13,29 @@ import {
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 const MobileMenu = () => {
+  const [open, setOpen] = useState(false);
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger className="lg:hidden">
         <HamburgerMenu />
       </SheetTrigger>
       <SheetContent
+        closeIcon
         side="top"
-        className="mt-20 pb-14 pt-20 lg:pt-28 h-auto w-full lg:hidden rounded-b-2xl !overflow-y-auto"
+        className="mt-20 pb-14 pt-20 lg:pt-28 h-[90vh] md:h-auto w-full lg:hidden rounded-b-2xl !overflow-y-auto"
       >
         <SheetHeader className="sr-only">
-          <SheetTitle>sdfsdfsdf</SheetTitle>
-          <SheetDescription>ferferfe</SheetDescription>
+          <SheetTitle>Mobile navigation</SheetTitle>
+          <SheetDescription>Shows navigation items</SheetDescription>
         </SheetHeader>
         <div className=" grid grid-cols-1 gap-[84px] md:gap-2.5 md:grid-cols-3 lg:gap-[30px] w-full px-6 md:px-10">
           <Link
             href={"/headphones"}
             className=" h-[165px] rounded-xl w-full group bg-[#F1F1F1] uppercase relative flex justify-center items-end pb-5"
+            onClick={() => setOpen(false)}
           >
             <div className="  w-24 h-24  m-auto absolute -top-16 ">
               <Image
@@ -62,6 +67,7 @@ const MobileMenu = () => {
           <Link
             href={"/speakers"}
             className=" h-[165px] rounded-xl w-full bg-[#F1F1F1] group uppercase relative flex justify-center items-end pb-5"
+            onClick={() => setOpen(false)}
           >
             <div className="  w-24 h-24  m-auto absolute -top-16 ">
               <Image
@@ -93,6 +99,7 @@ const MobileMenu = () => {
           <Link
             href={"/earphones"}
             className=" h-[165px] rounded-xl w-full bg-[#F1F1F1] uppercase relative flex justify-center items-end pb-5 group"
+            onClick={() => setOpen(false)}
           >
             <div className="  w-24 h-24  m-auto absolute -top-16 ">
               <Image
